@@ -1,0 +1,1774 @@
+## Feature Selection Algorithm ##
+['2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '1.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00', '2.0000000e+00']
+Choose search method:
+	1] Forward Selection:
+	2] Backward Elimination:
+forward selection
+On the 0th level of search tree
+->Considering no features
+Accuracy: 0.814
+
+On the level 1 of search tree
+->Considering the feature 1
+Accuracy: 0.72
+->Considering the feature 2
+Accuracy: 0.696
+->Considering the feature 3
+Accuracy: 0.714
+->Considering the feature 4
+Accuracy: 0.684
+->Considering the feature 5
+Accuracy: 0.695
+->Considering the feature 6
+Accuracy: 0.704
+->Considering the feature 7
+Accuracy: 0.714
+->Considering the feature 8
+Accuracy: 0.713
+->Considering the feature 9
+Accuracy: 0.701
+->Considering the feature 10
+Accuracy: 0.682
+->Considering the feature 11
+Accuracy: 0.864
+->Considering the feature 12
+Accuracy: 0.705
+->Considering the feature 13
+Accuracy: 0.702
+->Considering the feature 14
+Accuracy: 0.698
+->Considering the feature 15
+Accuracy: 0.703
+->Considering the feature 16
+Accuracy: 0.708
+->Considering the feature 17
+Accuracy: 0.694
+->Considering the feature 18
+Accuracy: 0.683
+->Considering the feature 19
+Accuracy: 0.701
+->Considering the feature 20
+Accuracy: 0.687
+->Considering the feature 21
+Accuracy: 0.67
+->Considering the feature 22
+Accuracy: 0.706
+->Considering the feature 23
+Accuracy: 0.703
+->Considering the feature 24
+Accuracy: 0.685
+->Considering the feature 25
+Accuracy: 0.707
+->Considering the feature 26
+Accuracy: 0.72
+->Considering the feature 27
+Accuracy: 0.68
+->Considering the feature 28
+Accuracy: 0.694
+->Considering the feature 29
+Accuracy: 0.683
+->Considering the feature 30
+Accuracy: 0.694
+->Considering the feature 31
+Accuracy: 0.7
+->Considering the feature 32
+Accuracy: 0.697
+->Considering the feature 33
+Accuracy: 0.693
+->Considering the feature 34
+Accuracy: 0.693
+->Considering the feature 35
+Accuracy: 0.679
+->Considering the feature 36
+Accuracy: 0.703
+->Considering the feature 37
+Accuracy: 0.721
+->Considering the feature 38
+Accuracy: 0.694
+->Considering the feature 39
+Accuracy: 0.701
+->Considering the feature 40
+Accuracy: 0.704
+On level 1 added feature 11 to current set
+
+On the level 2 of search tree
+->Considering the feature 1
+Accuracy: 0.825
+->Considering the feature 2
+Accuracy: 0.853
+->Considering the feature 3
+Accuracy: 0.877
+->Considering the feature 4
+Accuracy: 0.834
+->Considering the feature 5
+Accuracy: 0.832
+->Considering the feature 6
+Accuracy: 0.822
+->Considering the feature 7
+Accuracy: 0.824
+->Considering the feature 8
+Accuracy: 0.832
+->Considering the feature 9
+Accuracy: 0.856
+->Considering the feature 10
+Accuracy: 0.831
+->Considering the feature 12
+Accuracy: 0.855
+->Considering the feature 13
+Accuracy: 0.84
+->Considering the feature 14
+Accuracy: 0.847
+->Considering the feature 15
+Accuracy: 0.851
+->Considering the feature 16
+Accuracy: 0.818
+->Considering the feature 17
+Accuracy: 0.853
+->Considering the feature 18
+Accuracy: 0.839
+->Considering the feature 19
+Accuracy: 0.825
+->Considering the feature 20
+Accuracy: 0.85
+->Considering the feature 21
+Accuracy: 0.848
+->Considering the feature 22
+Accuracy: 0.827
+->Considering the feature 23
+Accuracy: 0.838
+->Considering the feature 24
+Accuracy: 0.833
+->Considering the feature 25
+Accuracy: 0.834
+->Considering the feature 26
+Accuracy: 0.855
+->Considering the feature 27
+Accuracy: 0.855
+->Considering the feature 28
+Accuracy: 0.843
+->Considering the feature 29
+Accuracy: 0.848
+->Considering the feature 30
+Accuracy: 0.862
+->Considering the feature 31
+Accuracy: 0.83
+->Considering the feature 32
+Accuracy: 0.855
+->Considering the feature 33
+Accuracy: 0.857
+->Considering the feature 34
+Accuracy: 0.846
+->Considering the feature 35
+Accuracy: 0.844
+->Considering the feature 36
+Accuracy: 0.82
+->Considering the feature 37
+Accuracy: 0.969
+->Considering the feature 38
+Accuracy: 0.836
+->Considering the feature 39
+Accuracy: 0.832
+->Considering the feature 40
+Accuracy: 0.842
+On level 2 added feature 37 to current set
+
+On the level 3 of search tree
+->Considering the feature 1
+Accuracy: 0.934
+->Considering the feature 2
+Accuracy: 0.928
+->Considering the feature 3
+Accuracy: 0.934
+->Considering the feature 4
+Accuracy: 0.929
+->Considering the feature 5
+Accuracy: 0.932
+->Considering the feature 6
+Accuracy: 0.935
+->Considering the feature 7
+Accuracy: 0.912
+->Considering the feature 8
+Accuracy: 0.921
+->Considering the feature 9
+Accuracy: 0.945
+->Considering the feature 10
+Accuracy: 0.948
+->Considering the feature 12
+Accuracy: 0.921
+->Considering the feature 13
+Accuracy: 0.923
+->Considering the feature 14
+Accuracy: 0.927
+->Considering the feature 15
+Accuracy: 0.924
+->Considering the feature 16
+Accuracy: 0.93
+->Considering the feature 17
+Accuracy: 0.931
+->Considering the feature 18
+Accuracy: 0.928
+->Considering the feature 19
+Accuracy: 0.946
+->Considering the feature 20
+Accuracy: 0.928
+->Considering the feature 21
+Accuracy: 0.927
+->Considering the feature 22
+Accuracy: 0.927
+->Considering the feature 23
+Accuracy: 0.925
+->Considering the feature 24
+Accuracy: 0.935
+->Considering the feature 25
+Accuracy: 0.929
+->Considering the feature 26
+Accuracy: 0.937
+->Considering the feature 27
+Accuracy: 0.93
+->Considering the feature 28
+Accuracy: 0.952
+->Considering the feature 29
+Accuracy: 0.923
+->Considering the feature 30
+Accuracy: 0.935
+->Considering the feature 31
+Accuracy: 0.938
+->Considering the feature 32
+Accuracy: 0.941
+->Considering the feature 33
+Accuracy: 0.938
+->Considering the feature 34
+Accuracy: 0.942
+->Considering the feature 35
+Accuracy: 0.938
+->Considering the feature 36
+Accuracy: 0.919
+->Considering the feature 38
+Accuracy: 0.916
+->Considering the feature 39
+Accuracy: 0.923
+->Considering the feature 40
+Accuracy: 0.931
+On level 3 added feature 28 to current set
+
+On the level 4 of search tree
+->Considering the feature 1
+Accuracy: 0.891
+->Considering the feature 2
+Accuracy: 0.899
+->Considering the feature 3
+Accuracy: 0.905
+->Considering the feature 4
+Accuracy: 0.896
+->Considering the feature 5
+Accuracy: 0.901
+->Considering the feature 6
+Accuracy: 0.895
+->Considering the feature 7
+Accuracy: 0.878
+->Considering the feature 8
+Accuracy: 0.888
+->Considering the feature 9
+Accuracy: 0.906
+->Considering the feature 10
+Accuracy: 0.911
+->Considering the feature 12
+Accuracy: 0.917
+->Considering the feature 13
+Accuracy: 0.898
+->Considering the feature 14
+Accuracy: 0.91
+->Considering the feature 15
+Accuracy: 0.903
+->Considering the feature 16
+Accuracy: 0.895
+->Considering the feature 17
+Accuracy: 0.891
+->Considering the feature 18
+Accuracy: 0.891
+->Considering the feature 19
+Accuracy: 0.901
+->Considering the feature 20
+Accuracy: 0.892
+->Considering the feature 21
+Accuracy: 0.908
+->Considering the feature 22
+Accuracy: 0.888
+->Considering the feature 23
+Accuracy: 0.892
+->Considering the feature 24
+Accuracy: 0.889
+->Considering the feature 25
+Accuracy: 0.898
+->Considering the feature 26
+Accuracy: 0.906
+->Considering the feature 27
+Accuracy: 0.893
+->Considering the feature 29
+Accuracy: 0.899
+->Considering the feature 30
+Accuracy: 0.917
+->Considering the feature 31
+Accuracy: 0.893
+->Considering the feature 32
+Accuracy: 0.92
+->Considering the feature 33
+Accuracy: 0.912
+->Considering the feature 34
+Accuracy: 0.898
+->Considering the feature 35
+Accuracy: 0.91
+->Considering the feature 36
+Accuracy: 0.886
+->Considering the feature 38
+Accuracy: 0.894
+->Considering the feature 39
+Accuracy: 0.914
+->Considering the feature 40
+Accuracy: 0.906
+On level 4 added feature 32 to current set
+
+On the level 5 of search tree
+->Considering the feature 1
+Accuracy: 0.875
+->Considering the feature 2
+Accuracy: 0.881
+->Considering the feature 3
+Accuracy: 0.877
+->Considering the feature 4
+Accuracy: 0.883
+->Considering the feature 5
+Accuracy: 0.873
+->Considering the feature 6
+Accuracy: 0.879
+->Considering the feature 7
+Accuracy: 0.884
+->Considering the feature 8
+Accuracy: 0.888
+->Considering the feature 9
+Accuracy: 0.867
+->Considering the feature 10
+Accuracy: 0.882
+->Considering the feature 12
+Accuracy: 0.904
+->Considering the feature 13
+Accuracy: 0.873
+->Considering the feature 14
+Accuracy: 0.889
+->Considering the feature 15
+Accuracy: 0.886
+->Considering the feature 16
+Accuracy: 0.882
+->Considering the feature 17
+Accuracy: 0.881
+->Considering the feature 18
+Accuracy: 0.871
+->Considering the feature 19
+Accuracy: 0.88
+->Considering the feature 20
+Accuracy: 0.881
+->Considering the feature 21
+Accuracy: 0.877
+->Considering the feature 22
+Accuracy: 0.884
+->Considering the feature 23
+Accuracy: 0.862
+->Considering the feature 24
+Accuracy: 0.862
+->Considering the feature 25
+Accuracy: 0.877
+->Considering the feature 26
+Accuracy: 0.891
+->Considering the feature 27
+Accuracy: 0.869
+->Considering the feature 29
+Accuracy: 0.884
+->Considering the feature 30
+Accuracy: 0.894
+->Considering the feature 31
+Accuracy: 0.878
+->Considering the feature 33
+Accuracy: 0.883
+->Considering the feature 34
+Accuracy: 0.88
+->Considering the feature 35
+Accuracy: 0.878
+->Considering the feature 36
+Accuracy: 0.887
+->Considering the feature 38
+Accuracy: 0.882
+->Considering the feature 39
+Accuracy: 0.877
+->Considering the feature 40
+Accuracy: 0.876
+On level 5 added feature 12 to current set
+
+On the level 6 of search tree
+->Considering the feature 1
+Accuracy: 0.833
+->Considering the feature 2
+Accuracy: 0.857
+->Considering the feature 3
+Accuracy: 0.85
+->Considering the feature 4
+Accuracy: 0.851
+->Considering the feature 5
+Accuracy: 0.858
+->Considering the feature 6
+Accuracy: 0.854
+->Considering the feature 7
+Accuracy: 0.873
+->Considering the feature 8
+Accuracy: 0.839
+->Considering the feature 9
+Accuracy: 0.848
+->Considering the feature 10
+Accuracy: 0.869
+->Considering the feature 13
+Accuracy: 0.871
+->Considering the feature 14
+Accuracy: 0.864
+->Considering the feature 15
+Accuracy: 0.842
+->Considering the feature 16
+Accuracy: 0.849
+->Considering the feature 17
+Accuracy: 0.867
+->Considering the feature 18
+Accuracy: 0.848
+->Considering the feature 19
+Accuracy: 0.855
+->Considering the feature 20
+Accuracy: 0.867
+->Considering the feature 21
+Accuracy: 0.868
+->Considering the feature 22
+Accuracy: 0.851
+->Considering the feature 23
+Accuracy: 0.836
+->Considering the feature 24
+Accuracy: 0.86
+->Considering the feature 25
+Accuracy: 0.846
+->Considering the feature 26
+Accuracy: 0.86
+->Considering the feature 27
+Accuracy: 0.838
+->Considering the feature 29
+Accuracy: 0.855
+->Considering the feature 30
+Accuracy: 0.861
+->Considering the feature 31
+Accuracy: 0.856
+->Considering the feature 33
+Accuracy: 0.844
+->Considering the feature 34
+Accuracy: 0.866
+->Considering the feature 35
+Accuracy: 0.852
+->Considering the feature 36
+Accuracy: 0.868
+->Considering the feature 38
+Accuracy: 0.858
+->Considering the feature 39
+Accuracy: 0.87
+->Considering the feature 40
+Accuracy: 0.853
+On level 6 added feature 7 to current set
+
+On the level 7 of search tree
+->Considering the feature 1
+Accuracy: 0.828
+->Considering the feature 2
+Accuracy: 0.828
+->Considering the feature 3
+Accuracy: 0.821
+->Considering the feature 4
+Accuracy: 0.813
+->Considering the feature 5
+Accuracy: 0.835
+->Considering the feature 6
+Accuracy: 0.814
+->Considering the feature 8
+Accuracy: 0.833
+->Considering the feature 9
+Accuracy: 0.83
+->Considering the feature 10
+Accuracy: 0.85
+->Considering the feature 13
+Accuracy: 0.84
+->Considering the feature 14
+Accuracy: 0.836
+->Considering the feature 15
+Accuracy: 0.803
+->Considering the feature 16
+Accuracy: 0.828
+->Considering the feature 17
+Accuracy: 0.822
+->Considering the feature 18
+Accuracy: 0.823
+->Considering the feature 19
+Accuracy: 0.818
+->Considering the feature 20
+Accuracy: 0.833
+->Considering the feature 21
+Accuracy: 0.836
+->Considering the feature 22
+Accuracy: 0.826
+->Considering the feature 23
+Accuracy: 0.807
+->Considering the feature 24
+Accuracy: 0.813
+->Considering the feature 25
+Accuracy: 0.844
+->Considering the feature 26
+Accuracy: 0.823
+->Considering the feature 27
+Accuracy: 0.825
+->Considering the feature 29
+Accuracy: 0.825
+->Considering the feature 30
+Accuracy: 0.828
+->Considering the feature 31
+Accuracy: 0.814
+->Considering the feature 33
+Accuracy: 0.823
+->Considering the feature 34
+Accuracy: 0.839
+->Considering the feature 35
+Accuracy: 0.821
+->Considering the feature 36
+Accuracy: 0.832
+->Considering the feature 38
+Accuracy: 0.848
+->Considering the feature 39
+Accuracy: 0.821
+->Considering the feature 40
+Accuracy: 0.824
+On level 7 added feature 10 to current set
+
+On the level 8 of search tree
+->Considering the feature 1
+Accuracy: 0.805
+->Considering the feature 2
+Accuracy: 0.811
+->Considering the feature 3
+Accuracy: 0.811
+->Considering the feature 4
+Accuracy: 0.805
+->Considering the feature 5
+Accuracy: 0.812
+->Considering the feature 6
+Accuracy: 0.808
+->Considering the feature 8
+Accuracy: 0.806
+->Considering the feature 9
+Accuracy: 0.801
+->Considering the feature 13
+Accuracy: 0.82
+->Considering the feature 14
+Accuracy: 0.811
+->Considering the feature 15
+Accuracy: 0.793
+->Considering the feature 16
+Accuracy: 0.804
+->Considering the feature 17
+Accuracy: 0.823
+->Considering the feature 18
+Accuracy: 0.807
+->Considering the feature 19
+Accuracy: 0.794
+->Considering the feature 20
+Accuracy: 0.808
+->Considering the feature 21
+Accuracy: 0.805
+->Considering the feature 22
+Accuracy: 0.819
+->Considering the feature 23
+Accuracy: 0.798
+->Considering the feature 24
+Accuracy: 0.822
+->Considering the feature 25
+Accuracy: 0.814
+->Considering the feature 26
+Accuracy: 0.816
+->Considering the feature 27
+Accuracy: 0.806
+->Considering the feature 29
+Accuracy: 0.803
+->Considering the feature 30
+Accuracy: 0.816
+->Considering the feature 31
+Accuracy: 0.801
+->Considering the feature 33
+Accuracy: 0.815
+->Considering the feature 34
+Accuracy: 0.827
+->Considering the feature 35
+Accuracy: 0.825
+->Considering the feature 36
+Accuracy: 0.834
+->Considering the feature 38
+Accuracy: 0.839
+->Considering the feature 39
+Accuracy: 0.797
+->Considering the feature 40
+Accuracy: 0.808
+On level 8 added feature 38 to current set
+
+On the level 9 of search tree
+->Considering the feature 1
+Accuracy: 0.794
+->Considering the feature 2
+Accuracy: 0.793
+->Considering the feature 3
+Accuracy: 0.797
+->Considering the feature 4
+Accuracy: 0.818
+->Considering the feature 5
+Accuracy: 0.808
+->Considering the feature 6
+Accuracy: 0.807
+->Considering the feature 8
+Accuracy: 0.81
+->Considering the feature 9
+Accuracy: 0.804
+->Considering the feature 13
+Accuracy: 0.803
+->Considering the feature 14
+Accuracy: 0.806
+->Considering the feature 15
+Accuracy: 0.781
+->Considering the feature 16
+Accuracy: 0.798
+->Considering the feature 17
+Accuracy: 0.807
+->Considering the feature 18
+Accuracy: 0.799
+->Considering the feature 19
+Accuracy: 0.8
+->Considering the feature 20
+Accuracy: 0.823
+->Considering the feature 21
+Accuracy: 0.803
+->Considering the feature 22
+Accuracy: 0.784
+->Considering the feature 23
+Accuracy: 0.787
+->Considering the feature 24
+Accuracy: 0.808
+->Considering the feature 25
+Accuracy: 0.817
+->Considering the feature 26
+Accuracy: 0.808
+->Considering the feature 27
+Accuracy: 0.8
+->Considering the feature 29
+Accuracy: 0.802
+->Considering the feature 30
+Accuracy: 0.821
+->Considering the feature 31
+Accuracy: 0.789
+->Considering the feature 33
+Accuracy: 0.805
+->Considering the feature 34
+Accuracy: 0.81
+->Considering the feature 35
+Accuracy: 0.812
+->Considering the feature 36
+Accuracy: 0.809
+->Considering the feature 39
+Accuracy: 0.809
+->Considering the feature 40
+Accuracy: 0.796
+On level 9 added feature 20 to current set
+
+On the level 10 of search tree
+->Considering the feature 1
+Accuracy: 0.777
+->Considering the feature 2
+Accuracy: 0.783
+->Considering the feature 3
+Accuracy: 0.785
+->Considering the feature 4
+Accuracy: 0.784
+->Considering the feature 5
+Accuracy: 0.781
+->Considering the feature 6
+Accuracy: 0.789
+->Considering the feature 8
+Accuracy: 0.783
+->Considering the feature 9
+Accuracy: 0.796
+->Considering the feature 13
+Accuracy: 0.796
+->Considering the feature 14
+Accuracy: 0.779
+->Considering the feature 15
+Accuracy: 0.782
+->Considering the feature 16
+Accuracy: 0.781
+->Considering the feature 17
+Accuracy: 0.79
+->Considering the feature 18
+Accuracy: 0.792
+->Considering the feature 19
+Accuracy: 0.795
+->Considering the feature 21
+Accuracy: 0.789
+->Considering the feature 22
+Accuracy: 0.765
+->Considering the feature 23
+Accuracy: 0.767
+->Considering the feature 24
+Accuracy: 0.791
+->Considering the feature 25
+Accuracy: 0.79
+->Considering the feature 26
+Accuracy: 0.785
+->Considering the feature 27
+Accuracy: 0.769
+->Considering the feature 29
+Accuracy: 0.792
+->Considering the feature 30
+Accuracy: 0.805
+->Considering the feature 31
+Accuracy: 0.774
+->Considering the feature 33
+Accuracy: 0.776
+->Considering the feature 34
+Accuracy: 0.806
+->Considering the feature 35
+Accuracy: 0.792
+->Considering the feature 36
+Accuracy: 0.805
+->Considering the feature 39
+Accuracy: 0.783
+->Considering the feature 40
+Accuracy: 0.794
+On level 10 added feature 34 to current set
+
+On the level 11 of search tree
+->Considering the feature 1
+Accuracy: 0.791
+->Considering the feature 2
+Accuracy: 0.774
+->Considering the feature 3
+Accuracy: 0.774
+->Considering the feature 4
+Accuracy: 0.789
+->Considering the feature 5
+Accuracy: 0.762
+->Considering the feature 6
+Accuracy: 0.776
+->Considering the feature 8
+Accuracy: 0.767
+->Considering the feature 9
+Accuracy: 0.774
+->Considering the feature 13
+Accuracy: 0.802
+->Considering the feature 14
+Accuracy: 0.804
+->Considering the feature 15
+Accuracy: 0.774
+->Considering the feature 16
+Accuracy: 0.773
+->Considering the feature 17
+Accuracy: 0.79
+->Considering the feature 18
+Accuracy: 0.788
+->Considering the feature 19
+Accuracy: 0.772
+->Considering the feature 21
+Accuracy: 0.777
+->Considering the feature 22
+Accuracy: 0.776
+->Considering the feature 23
+Accuracy: 0.752
+->Considering the feature 24
+Accuracy: 0.791
+->Considering the feature 25
+Accuracy: 0.79
+->Considering the feature 26
+Accuracy: 0.779
+->Considering the feature 27
+Accuracy: 0.793
+->Considering the feature 29
+Accuracy: 0.779
+->Considering the feature 30
+Accuracy: 0.793
+->Considering the feature 31
+Accuracy: 0.787
+->Considering the feature 33
+Accuracy: 0.768
+->Considering the feature 35
+Accuracy: 0.759
+->Considering the feature 36
+Accuracy: 0.8
+->Considering the feature 39
+Accuracy: 0.792
+->Considering the feature 40
+Accuracy: 0.774
+On level 11 added feature 14 to current set
+
+On the level 12 of search tree
+->Considering the feature 1
+Accuracy: 0.781
+->Considering the feature 2
+Accuracy: 0.781
+->Considering the feature 3
+Accuracy: 0.777
+->Considering the feature 4
+Accuracy: 0.775
+->Considering the feature 5
+Accuracy: 0.774
+->Considering the feature 6
+Accuracy: 0.785
+->Considering the feature 8
+Accuracy: 0.759
+->Considering the feature 9
+Accuracy: 0.763
+->Considering the feature 13
+Accuracy: 0.79
+->Considering the feature 15
+Accuracy: 0.772
+->Considering the feature 16
+Accuracy: 0.775
+->Considering the feature 17
+Accuracy: 0.771
+->Considering the feature 18
+Accuracy: 0.75
+->Considering the feature 19
+Accuracy: 0.77
+->Considering the feature 21
+Accuracy: 0.782
+->Considering the feature 22
+Accuracy: 0.773
+->Considering the feature 23
+Accuracy: 0.754
+->Considering the feature 24
+Accuracy: 0.783
+->Considering the feature 25
+Accuracy: 0.768
+->Considering the feature 26
+Accuracy: 0.788
+->Considering the feature 27
+Accuracy: 0.783
+->Considering the feature 29
+Accuracy: 0.76
+->Considering the feature 30
+Accuracy: 0.779
+->Considering the feature 31
+Accuracy: 0.775
+->Considering the feature 33
+Accuracy: 0.77
+->Considering the feature 35
+Accuracy: 0.752
+->Considering the feature 36
+Accuracy: 0.79
+->Considering the feature 39
+Accuracy: 0.789
+->Considering the feature 40
+Accuracy: 0.779
+On level 12 added feature 13 to current set
+
+On the level 13 of search tree
+->Considering the feature 1
+Accuracy: 0.765
+->Considering the feature 2
+Accuracy: 0.768
+->Considering the feature 3
+Accuracy: 0.762
+->Considering the feature 4
+Accuracy: 0.783
+->Considering the feature 5
+Accuracy: 0.765
+->Considering the feature 6
+Accuracy: 0.785
+->Considering the feature 8
+Accuracy: 0.757
+->Considering the feature 9
+Accuracy: 0.764
+->Considering the feature 15
+Accuracy: 0.777
+->Considering the feature 16
+Accuracy: 0.775
+->Considering the feature 17
+Accuracy: 0.771
+->Considering the feature 18
+Accuracy: 0.771
+->Considering the feature 19
+Accuracy: 0.777
+->Considering the feature 21
+Accuracy: 0.776
+->Considering the feature 22
+Accuracy: 0.761
+->Considering the feature 23
+Accuracy: 0.772
+->Considering the feature 24
+Accuracy: 0.775
+->Considering the feature 25
+Accuracy: 0.761
+->Considering the feature 26
+Accuracy: 0.768
+->Considering the feature 27
+Accuracy: 0.772
+->Considering the feature 29
+Accuracy: 0.78
+->Considering the feature 30
+Accuracy: 0.764
+->Considering the feature 31
+Accuracy: 0.776
+->Considering the feature 33
+Accuracy: 0.781
+->Considering the feature 35
+Accuracy: 0.747
+->Considering the feature 36
+Accuracy: 0.779
+->Considering the feature 39
+Accuracy: 0.78
+->Considering the feature 40
+Accuracy: 0.776
+On level 13 added feature 6 to current set
+
+On the level 14 of search tree
+->Considering the feature 1
+Accuracy: 0.764
+->Considering the feature 2
+Accuracy: 0.765
+->Considering the feature 3
+Accuracy: 0.756
+->Considering the feature 4
+Accuracy: 0.768
+->Considering the feature 5
+Accuracy: 0.757
+->Considering the feature 8
+Accuracy: 0.759
+->Considering the feature 9
+Accuracy: 0.772
+->Considering the feature 15
+Accuracy: 0.767
+->Considering the feature 16
+Accuracy: 0.771
+->Considering the feature 17
+Accuracy: 0.777
+->Considering the feature 18
+Accuracy: 0.764
+->Considering the feature 19
+Accuracy: 0.781
+->Considering the feature 21
+Accuracy: 0.781
+->Considering the feature 22
+Accuracy: 0.758
+->Considering the feature 23
+Accuracy: 0.747
+->Considering the feature 24
+Accuracy: 0.766
+->Considering the feature 25
+Accuracy: 0.759
+->Considering the feature 26
+Accuracy: 0.768
+->Considering the feature 27
+Accuracy: 0.752
+->Considering the feature 29
+Accuracy: 0.759
+->Considering the feature 30
+Accuracy: 0.769
+->Considering the feature 31
+Accuracy: 0.767
+->Considering the feature 33
+Accuracy: 0.769
+->Considering the feature 35
+Accuracy: 0.742
+->Considering the feature 36
+Accuracy: 0.775
+->Considering the feature 39
+Accuracy: 0.75
+->Considering the feature 40
+Accuracy: 0.767
+On level 14 added feature 19 to current set
+
+On the level 15 of search tree
+->Considering the feature 1
+Accuracy: 0.769
+->Considering the feature 2
+Accuracy: 0.762
+->Considering the feature 3
+Accuracy: 0.781
+->Considering the feature 4
+Accuracy: 0.768
+->Considering the feature 5
+Accuracy: 0.772
+->Considering the feature 8
+Accuracy: 0.76
+->Considering the feature 9
+Accuracy: 0.763
+->Considering the feature 15
+Accuracy: 0.76
+->Considering the feature 16
+Accuracy: 0.75
+->Considering the feature 17
+Accuracy: 0.77
+->Considering the feature 18
+Accuracy: 0.771
+->Considering the feature 21
+Accuracy: 0.776
+->Considering the feature 22
+Accuracy: 0.769
+->Considering the feature 23
+Accuracy: 0.737
+->Considering the feature 24
+Accuracy: 0.768
+->Considering the feature 25
+Accuracy: 0.75
+->Considering the feature 26
+Accuracy: 0.77
+->Considering the feature 27
+Accuracy: 0.772
+->Considering the feature 29
+Accuracy: 0.76
+->Considering the feature 30
+Accuracy: 0.784
+->Considering the feature 31
+Accuracy: 0.761
+->Considering the feature 33
+Accuracy: 0.754
+->Considering the feature 35
+Accuracy: 0.75
+->Considering the feature 36
+Accuracy: 0.783
+->Considering the feature 39
+Accuracy: 0.765
+->Considering the feature 40
+Accuracy: 0.762
+On level 15 added feature 30 to current set
+
+On the level 16 of search tree
+->Considering the feature 1
+Accuracy: 0.769
+->Considering the feature 2
+Accuracy: 0.779
+->Considering the feature 3
+Accuracy: 0.766
+->Considering the feature 4
+Accuracy: 0.773
+->Considering the feature 5
+Accuracy: 0.773
+->Considering the feature 8
+Accuracy: 0.775
+->Considering the feature 9
+Accuracy: 0.778
+->Considering the feature 15
+Accuracy: 0.769
+->Considering the feature 16
+Accuracy: 0.76
+->Considering the feature 17
+Accuracy: 0.785
+->Considering the feature 18
+Accuracy: 0.76
+->Considering the feature 21
+Accuracy: 0.773
+->Considering the feature 22
+Accuracy: 0.777
+->Considering the feature 23
+Accuracy: 0.755
+->Considering the feature 24
+Accuracy: 0.765
+->Considering the feature 25
+Accuracy: 0.76
+->Considering the feature 26
+Accuracy: 0.772
+->Considering the feature 27
+Accuracy: 0.776
+->Considering the feature 29
+Accuracy: 0.766
+->Considering the feature 31
+Accuracy: 0.767
+->Considering the feature 33
+Accuracy: 0.766
+->Considering the feature 35
+Accuracy: 0.761
+->Considering the feature 36
+Accuracy: 0.786
+->Considering the feature 39
+Accuracy: 0.769
+->Considering the feature 40
+Accuracy: 0.769
+On level 16 added feature 36 to current set
+
+On the level 17 of search tree
+->Considering the feature 1
+Accuracy: 0.768
+->Considering the feature 2
+Accuracy: 0.787
+->Considering the feature 3
+Accuracy: 0.771
+->Considering the feature 4
+Accuracy: 0.758
+->Considering the feature 5
+Accuracy: 0.76
+->Considering the feature 8
+Accuracy: 0.783
+->Considering the feature 9
+Accuracy: 0.772
+->Considering the feature 15
+Accuracy: 0.754
+->Considering the feature 16
+Accuracy: 0.758
+->Considering the feature 17
+Accuracy: 0.777
+->Considering the feature 18
+Accuracy: 0.762
+->Considering the feature 21
+Accuracy: 0.757
+->Considering the feature 22
+Accuracy: 0.768
+->Considering the feature 23
+Accuracy: 0.764
+->Considering the feature 24
+Accuracy: 0.753
+->Considering the feature 25
+Accuracy: 0.757
+->Considering the feature 26
+Accuracy: 0.76
+->Considering the feature 27
+Accuracy: 0.765
+->Considering the feature 29
+Accuracy: 0.774
+->Considering the feature 31
+Accuracy: 0.759
+->Considering the feature 33
+Accuracy: 0.766
+->Considering the feature 35
+Accuracy: 0.745
+->Considering the feature 39
+Accuracy: 0.767
+->Considering the feature 40
+Accuracy: 0.764
+On level 17 added feature 2 to current set
+
+On the level 18 of search tree
+->Considering the feature 1
+Accuracy: 0.78
+->Considering the feature 3
+Accuracy: 0.773
+->Considering the feature 4
+Accuracy: 0.761
+->Considering the feature 5
+Accuracy: 0.782
+->Considering the feature 8
+Accuracy: 0.78
+->Considering the feature 9
+Accuracy: 0.775
+->Considering the feature 15
+Accuracy: 0.768
+->Considering the feature 16
+Accuracy: 0.762
+->Considering the feature 17
+Accuracy: 0.773
+->Considering the feature 18
+Accuracy: 0.753
+->Considering the feature 21
+Accuracy: 0.771
+->Considering the feature 22
+Accuracy: 0.776
+->Considering the feature 23
+Accuracy: 0.761
+->Considering the feature 24
+Accuracy: 0.763
+->Considering the feature 25
+Accuracy: 0.757
+->Considering the feature 26
+Accuracy: 0.775
+->Considering the feature 27
+Accuracy: 0.765
+->Considering the feature 29
+Accuracy: 0.778
+->Considering the feature 31
+Accuracy: 0.772
+->Considering the feature 33
+Accuracy: 0.767
+->Considering the feature 35
+Accuracy: 0.768
+->Considering the feature 39
+Accuracy: 0.787
+->Considering the feature 40
+Accuracy: 0.77
+On level 18 added feature 39 to current set
+
+On the level 19 of search tree
+->Considering the feature 1
+Accuracy: 0.772
+->Considering the feature 3
+Accuracy: 0.765
+->Considering the feature 4
+Accuracy: 0.762
+->Considering the feature 5
+Accuracy: 0.762
+->Considering the feature 8
+Accuracy: 0.773
+->Considering the feature 9
+Accuracy: 0.773
+->Considering the feature 15
+Accuracy: 0.765
+->Considering the feature 16
+Accuracy: 0.766
+->Considering the feature 17
+Accuracy: 0.767
+->Considering the feature 18
+Accuracy: 0.761
+->Considering the feature 21
+Accuracy: 0.76
+->Considering the feature 22
+Accuracy: 0.772
+->Considering the feature 23
+Accuracy: 0.746
+->Considering the feature 24
+Accuracy: 0.772
+->Considering the feature 25
+Accuracy: 0.766
+->Considering the feature 26
+Accuracy: 0.762
+->Considering the feature 27
+Accuracy: 0.769
+->Considering the feature 29
+Accuracy: 0.765
+->Considering the feature 31
+Accuracy: 0.77
+->Considering the feature 33
+Accuracy: 0.755
+->Considering the feature 35
+Accuracy: 0.76
+->Considering the feature 40
+Accuracy: 0.751
+On level 19 added feature 8 to current set
+
+On the level 20 of search tree
+->Considering the feature 1
+Accuracy: 0.769
+->Considering the feature 3
+Accuracy: 0.765
+->Considering the feature 4
+Accuracy: 0.762
+->Considering the feature 5
+Accuracy: 0.756
+->Considering the feature 9
+Accuracy: 0.758
+->Considering the feature 15
+Accuracy: 0.757
+->Considering the feature 16
+Accuracy: 0.755
+->Considering the feature 17
+Accuracy: 0.757
+->Considering the feature 18
+Accuracy: 0.755
+->Considering the feature 21
+Accuracy: 0.757
+->Considering the feature 22
+Accuracy: 0.765
+->Considering the feature 23
+Accuracy: 0.748
+->Considering the feature 24
+Accuracy: 0.757
+->Considering the feature 25
+Accuracy: 0.762
+->Considering the feature 26
+Accuracy: 0.763
+->Considering the feature 27
+Accuracy: 0.77
+->Considering the feature 29
+Accuracy: 0.762
+->Considering the feature 31
+Accuracy: 0.755
+->Considering the feature 33
+Accuracy: 0.768
+->Considering the feature 35
+Accuracy: 0.757
+->Considering the feature 40
+Accuracy: 0.742
+On level 20 added feature 27 to current set
+
+On the level 21 of search tree
+->Considering the feature 1
+Accuracy: 0.768
+->Considering the feature 3
+Accuracy: 0.761
+->Considering the feature 4
+Accuracy: 0.754
+->Considering the feature 5
+Accuracy: 0.751
+->Considering the feature 9
+Accuracy: 0.747
+->Considering the feature 15
+Accuracy: 0.741
+->Considering the feature 16
+Accuracy: 0.746
+->Considering the feature 17
+Accuracy: 0.748
+->Considering the feature 18
+Accuracy: 0.749
+->Considering the feature 21
+Accuracy: 0.744
+->Considering the feature 22
+Accuracy: 0.749
+->Considering the feature 23
+Accuracy: 0.735
+->Considering the feature 24
+Accuracy: 0.74
+->Considering the feature 25
+Accuracy: 0.76
+->Considering the feature 26
+Accuracy: 0.735
+->Considering the feature 29
+Accuracy: 0.755
+->Considering the feature 31
+Accuracy: 0.741
+->Considering the feature 33
+Accuracy: 0.749
+->Considering the feature 35
+Accuracy: 0.751
+->Considering the feature 40
+Accuracy: 0.739
+On level 21 added feature 1 to current set
+
+On the level 22 of search tree
+->Considering the feature 3
+Accuracy: 0.761
+->Considering the feature 4
+Accuracy: 0.754
+->Considering the feature 5
+Accuracy: 0.757
+->Considering the feature 9
+Accuracy: 0.747
+->Considering the feature 15
+Accuracy: 0.747
+->Considering the feature 16
+Accuracy: 0.735
+->Considering the feature 17
+Accuracy: 0.759
+->Considering the feature 18
+Accuracy: 0.723
+->Considering the feature 21
+Accuracy: 0.754
+->Considering the feature 22
+Accuracy: 0.76
+->Considering the feature 23
+Accuracy: 0.731
+->Considering the feature 24
+Accuracy: 0.733
+->Considering the feature 25
+Accuracy: 0.758
+->Considering the feature 26
+Accuracy: 0.732
+->Considering the feature 29
+Accuracy: 0.75
+->Considering the feature 31
+Accuracy: 0.724
+->Considering the feature 33
+Accuracy: 0.744
+->Considering the feature 35
+Accuracy: 0.757
+->Considering the feature 40
+Accuracy: 0.74
+On level 22 added feature 3 to current set
+
+On the level 23 of search tree
+->Considering the feature 4
+Accuracy: 0.754
+->Considering the feature 5
+Accuracy: 0.746
+->Considering the feature 9
+Accuracy: 0.738
+->Considering the feature 15
+Accuracy: 0.747
+->Considering the feature 16
+Accuracy: 0.737
+->Considering the feature 17
+Accuracy: 0.754
+->Considering the feature 18
+Accuracy: 0.745
+->Considering the feature 21
+Accuracy: 0.748
+->Considering the feature 22
+Accuracy: 0.745
+->Considering the feature 23
+Accuracy: 0.747
+->Considering the feature 24
+Accuracy: 0.744
+->Considering the feature 25
+Accuracy: 0.748
+->Considering the feature 26
+Accuracy: 0.721
+->Considering the feature 29
+Accuracy: 0.757
+->Considering the feature 31
+Accuracy: 0.741
+->Considering the feature 33
+Accuracy: 0.753
+->Considering the feature 35
+Accuracy: 0.752
+->Considering the feature 40
+Accuracy: 0.748
+On level 23 added feature 29 to current set
+
+On the level 24 of search tree
+->Considering the feature 4
+Accuracy: 0.75
+->Considering the feature 5
+Accuracy: 0.755
+->Considering the feature 9
+Accuracy: 0.725
+->Considering the feature 15
+Accuracy: 0.749
+->Considering the feature 16
+Accuracy: 0.735
+->Considering the feature 17
+Accuracy: 0.75
+->Considering the feature 18
+Accuracy: 0.732
+->Considering the feature 21
+Accuracy: 0.749
+->Considering the feature 22
+Accuracy: 0.746
+->Considering the feature 23
+Accuracy: 0.739
+->Considering the feature 24
+Accuracy: 0.741
+->Considering the feature 25
+Accuracy: 0.747
+->Considering the feature 26
+Accuracy: 0.727
+->Considering the feature 31
+Accuracy: 0.736
+->Considering the feature 33
+Accuracy: 0.744
+->Considering the feature 35
+Accuracy: 0.748
+->Considering the feature 40
+Accuracy: 0.751
+On level 24 added feature 5 to current set
+
+On the level 25 of search tree
+->Considering the feature 4
+Accuracy: 0.75
+->Considering the feature 9
+Accuracy: 0.726
+->Considering the feature 15
+Accuracy: 0.744
+->Considering the feature 16
+Accuracy: 0.743
+->Considering the feature 17
+Accuracy: 0.735
+->Considering the feature 18
+Accuracy: 0.715
+->Considering the feature 21
+Accuracy: 0.737
+->Considering the feature 22
+Accuracy: 0.74
+->Considering the feature 23
+Accuracy: 0.74
+->Considering the feature 24
+Accuracy: 0.722
+->Considering the feature 25
+Accuracy: 0.756
+->Considering the feature 26
+Accuracy: 0.738
+->Considering the feature 31
+Accuracy: 0.73
+->Considering the feature 33
+Accuracy: 0.74
+->Considering the feature 35
+Accuracy: 0.73
+->Considering the feature 40
+Accuracy: 0.735
+On level 25 added feature 25 to current set
+
+On the level 26 of search tree
+->Considering the feature 4
+Accuracy: 0.727
+->Considering the feature 9
+Accuracy: 0.743
+->Considering the feature 15
+Accuracy: 0.721
+->Considering the feature 16
+Accuracy: 0.751
+->Considering the feature 17
+Accuracy: 0.734
+->Considering the feature 18
+Accuracy: 0.735
+->Considering the feature 21
+Accuracy: 0.733
+->Considering the feature 22
+Accuracy: 0.747
+->Considering the feature 23
+Accuracy: 0.743
+->Considering the feature 24
+Accuracy: 0.736
+->Considering the feature 26
+Accuracy: 0.751
+->Considering the feature 31
+Accuracy: 0.732
+->Considering the feature 33
+Accuracy: 0.728
+->Considering the feature 35
+Accuracy: 0.72
+->Considering the feature 40
+Accuracy: 0.734
+On level 26 added feature 16 to current set
+
+On the level 27 of search tree
+->Considering the feature 4
+Accuracy: 0.736
+->Considering the feature 9
+Accuracy: 0.737
+->Considering the feature 15
+Accuracy: 0.729
+->Considering the feature 17
+Accuracy: 0.742
+->Considering the feature 18
+Accuracy: 0.736
+->Considering the feature 21
+Accuracy: 0.74
+->Considering the feature 22
+Accuracy: 0.75
+->Considering the feature 23
+Accuracy: 0.745
+->Considering the feature 24
+Accuracy: 0.747
+->Considering the feature 26
+Accuracy: 0.739
+->Considering the feature 31
+Accuracy: 0.728
+->Considering the feature 33
+Accuracy: 0.733
+->Considering the feature 35
+Accuracy: 0.735
+->Considering the feature 40
+Accuracy: 0.733
+On level 27 added feature 22 to current set
+
+On the level 28 of search tree
+->Considering the feature 4
+Accuracy: 0.747
+->Considering the feature 9
+Accuracy: 0.735
+->Considering the feature 15
+Accuracy: 0.724
+->Considering the feature 17
+Accuracy: 0.741
+->Considering the feature 18
+Accuracy: 0.734
+->Considering the feature 21
+Accuracy: 0.737
+->Considering the feature 23
+Accuracy: 0.739
+->Considering the feature 24
+Accuracy: 0.745
+->Considering the feature 26
+Accuracy: 0.746
+->Considering the feature 31
+Accuracy: 0.741
+->Considering the feature 33
+Accuracy: 0.727
+->Considering the feature 35
+Accuracy: 0.727
+->Considering the feature 40
+Accuracy: 0.731
+On level 28 added feature 4 to current set
+
+On the level 29 of search tree
+->Considering the feature 9
+Accuracy: 0.738
+->Considering the feature 15
+Accuracy: 0.737
+->Considering the feature 17
+Accuracy: 0.737
+->Considering the feature 18
+Accuracy: 0.737
+->Considering the feature 21
+Accuracy: 0.736
+->Considering the feature 23
+Accuracy: 0.743
+->Considering the feature 24
+Accuracy: 0.73
+->Considering the feature 26
+Accuracy: 0.746
+->Considering the feature 31
+Accuracy: 0.742
+->Considering the feature 33
+Accuracy: 0.725
+->Considering the feature 35
+Accuracy: 0.722
+->Considering the feature 40
+Accuracy: 0.721
+On level 29 added feature 26 to current set
+
+On the level 30 of search tree
+->Considering the feature 9
+Accuracy: 0.737
+->Considering the feature 15
+Accuracy: 0.73
+->Considering the feature 17
+Accuracy: 0.73
+->Considering the feature 18
+Accuracy: 0.734
+->Considering the feature 21
+Accuracy: 0.735
+->Considering the feature 23
+Accuracy: 0.736
+->Considering the feature 24
+Accuracy: 0.735
+->Considering the feature 31
+Accuracy: 0.74
+->Considering the feature 33
+Accuracy: 0.728
+->Considering the feature 35
+Accuracy: 0.712
+->Considering the feature 40
+Accuracy: 0.723
+On level 30 added feature 31 to current set
+
+On the level 31 of search tree
+->Considering the feature 9
+Accuracy: 0.735
+->Considering the feature 15
+Accuracy: 0.723
+->Considering the feature 17
+Accuracy: 0.722
+->Considering the feature 18
+Accuracy: 0.742
+->Considering the feature 21
+Accuracy: 0.737
+->Considering the feature 23
+Accuracy: 0.731
+->Considering the feature 24
+Accuracy: 0.733
+->Considering the feature 33
+Accuracy: 0.733
+->Considering the feature 35
+Accuracy: 0.724
+->Considering the feature 40
+Accuracy: 0.711
+On level 31 added feature 18 to current set
+
+On the level 32 of search tree
+->Considering the feature 9
+Accuracy: 0.736
+->Considering the feature 15
+Accuracy: 0.734
+->Considering the feature 17
+Accuracy: 0.735
+->Considering the feature 21
+Accuracy: 0.741
+->Considering the feature 23
+Accuracy: 0.736
+->Considering the feature 24
+Accuracy: 0.746
+->Considering the feature 33
+Accuracy: 0.732
+->Considering the feature 35
+Accuracy: 0.739
+->Considering the feature 40
+Accuracy: 0.715
+On level 32 added feature 24 to current set
+
+On the level 33 of search tree
+->Considering the feature 9
+Accuracy: 0.744
+->Considering the feature 15
+Accuracy: 0.731
+->Considering the feature 17
+Accuracy: 0.744
+->Considering the feature 21
+Accuracy: 0.747
+->Considering the feature 23
+Accuracy: 0.745
+->Considering the feature 33
+Accuracy: 0.747
+->Considering the feature 35
+Accuracy: 0.731
+->Considering the feature 40
+Accuracy: 0.721
+On level 33 added feature 21 to current set
+
+On the level 34 of search tree
+->Considering the feature 9
+Accuracy: 0.743
+->Considering the feature 15
+Accuracy: 0.734
+->Considering the feature 17
+Accuracy: 0.746
+->Considering the feature 23
+Accuracy: 0.747
+->Considering the feature 33
+Accuracy: 0.754
+->Considering the feature 35
+Accuracy: 0.736
+->Considering the feature 40
+Accuracy: 0.721
+On level 34 added feature 33 to current set
+
+On the level 35 of search tree
+->Considering the feature 9
+Accuracy: 0.746
+->Considering the feature 15
+Accuracy: 0.73
+->Considering the feature 17
+Accuracy: 0.742
+->Considering the feature 23
+Accuracy: 0.736
+->Considering the feature 35
+Accuracy: 0.74
+->Considering the feature 40
+Accuracy: 0.72
+On level 35 added feature 9 to current set
+
+On the level 36 of search tree
+->Considering the feature 15
+Accuracy: 0.742
+->Considering the feature 17
+Accuracy: 0.739
+->Considering the feature 23
+Accuracy: 0.737
+->Considering the feature 35
+Accuracy: 0.745
+->Considering the feature 40
+Accuracy: 0.726
+On level 36 added feature 35 to current set
+
+On the level 37 of search tree
+->Considering the feature 15
+Accuracy: 0.737
+->Considering the feature 17
+Accuracy: 0.739
+->Considering the feature 23
+Accuracy: 0.74
+->Considering the feature 40
+Accuracy: 0.729
+On level 37 added feature 23 to current set
+
+On the level 38 of search tree
+->Considering the feature 15
+Accuracy: 0.732
+->Considering the feature 17
+Accuracy: 0.739
+->Considering the feature 40
+Accuracy: 0.729
+On level 38 added feature 17 to current set
+
+On the level 39 of search tree
+->Considering the feature 15
+Accuracy: 0.722
+->Considering the feature 40
+Accuracy: 0.724
+On level 39 added feature 40 to current set
+
+On the level 40 of search tree
+->Considering the feature 15
+Accuracy: 0.717
+On level 40 added feature 15 to current set
+
+The best accuracy: 0.969
+Features: [11, 37]
+
+Process finished with exit code 0
