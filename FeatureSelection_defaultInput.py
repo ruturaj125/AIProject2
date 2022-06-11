@@ -1,6 +1,9 @@
 from array import *
 import numpy as np
 import csv
+import pandas as pd
+import warnings
+warnings.filterwarnings("ignore")
 import random
 import copy
 import math
@@ -71,8 +74,18 @@ def no_features():
 
 #==============================================================================#
 
+dict = {'Features': [],
+		'Accuracy': [],
+		}
+
+df = pd.DataFrame(dict)
+
+
+
+#==============================================================================#
+
 #Feature Selection forward selection
-def forward_selection():
+def forward_selection(df):
 	# with open(file) as f:
 	# 	reader = csv.reader(f, delimiter = ' ', skipinitialspace = True)
 	# 	first_row = next(reader)
@@ -82,6 +95,7 @@ def forward_selection():
 	curr_set_features = []
 	good_accuracies = []
 	more_features = []
+	considered_features = []
 	for i in range(1, num_cols):
 		print("On the level " + str(i) + " of search tree")
 		feature_to_add_at_level = 0
@@ -92,12 +106,17 @@ def forward_selection():
 			if j not in curr_set_features:
 				print("->Considering the feature " + str(j))
 				accuracy,list_features = k_fold_forward(x, j) #random.uniform(0.0, 1.0)
-				print("Accuracy: " + str(accuracy), " Features considered:", list_features)
+				print("Accuracy: " + str(round(accuracy,2)), " Features considered:", list_features)
+
 				if accuracy > best_accuracy:
 					best_accuracy = accuracy
 					feature_to_add_at_level = j
+					considered_features = list_features
 		curr_set_features.append(feature_to_add_at_level)
 		good_accuracies.append(best_accuracy)
+		print("Best Accuracy: " + str(round(best_accuracy, 2)), " Feature considered:", feature_to_add_at_level)
+		df_2 = pd.DataFrame({'Features': [considered_features], 'Accuracy': [round(best_accuracy, 2)]})
+		df = df.append(df_2)
 		y = copy.deepcopy(curr_set_features)
 		more_features.append(y)
 		# print(more_features)
@@ -105,13 +124,15 @@ def forward_selection():
 		print("On level " + str(i) + " added feature " + str(feature_to_add_at_level) + " to current set\n")
 	print("The best accuracy: " + str(max(good_accuracies)))
 	print("Features: " + str(more_features[maxpos]))
+	return df
 
 
-def backward_elimination():
+def backward_elimination(df):
 	# print(str(num_cols))
 	curr_set_features = np.arange(1, num_cols, 1) #has every feature pushed on curr_set_features
 	good_accuracies = []
 	more_features = []
+	considered_features = []
 	for i in range(1, num_cols):
 		print("On the level " + str(i) + " of the search tree")
 		feature_to_sub_at_level = 0
@@ -122,18 +143,23 @@ def backward_elimination():
 			if j in curr_set_features:
 				print("->Considering removing the  feature " + str(j))
 				accuracy, list_features = k_fold_backward(x, j) #random.uniform(0.0, 1.0)
-				print("Accuracy: " + str(accuracy), " Features considered:", list_features)
+				print("Accuracy: " + str(round(accuracy,2)), " Features considered:", list_features)
 				if accuracy > best_accuracy:
 					best_accuracy = accuracy
 					feature_to_sub_at_level = j
+					considered_features = list_features
 		curr_set_features = curr_set_features[curr_set_features != feature_to_sub_at_level]
 		good_accuracies.append(best_accuracy)
+		print("Best Accuracy: " + str(round(best_accuracy, 2)), " Feature dropped:", feature_to_sub_at_level)
+		df_2 = pd.DataFrame({'Features': [considered_features], 'Accuracy': [round(best_accuracy, 2)]})
+		df = df.append(df_2)
 		y = copy.deepcopy(curr_set_features)
 		more_features.append(y)
 		maxpos = good_accuracies.index(max(good_accuracies))
 		print("On level " + str(i) + " removed feature " + str(feature_to_sub_at_level) + " from the current set\n")
 	print("The best accuracy: " + str(max(good_accuracies)))
 	print("Features " + str(more_features[maxpos]))
+	return df
 
 
 print("## Feature Selection Algorithm ##")
@@ -184,11 +210,13 @@ print("	2] Backward Elimination:")
 algorithm="1"
 if (algorithm == str(1)):
 	print("forward selection")
-	forward_selection()
+	df = forward_selection(df)
 
 elif (algorithm == str(2)):
 	print("backward elimination")
-	backward_elimination()
+	df = backward_elimination(df)
 
 else:
 	print("Try again!")
+
+df.to_csv("output_features.csv", encoding='utf-8', index=False, sep =';')
